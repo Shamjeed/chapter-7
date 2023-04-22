@@ -1,7 +1,7 @@
 terraform init
 
 #Get kubernetes versions from location eastus
-az aks get-versions --location eastus
+az aks get-versions --location eastus --output table
 #KubernetesVersion    Upgrades
 #-------------------  ------------------------
 #1.26.0(preview)      None available
@@ -54,4 +54,4 @@ kubectl delete -f scripts/deploy.yaml
 
 #CD chapter-7/example-3
 #Then destroy the infrastructure
-terraform destroy
+terraform destroy -auto-approve
